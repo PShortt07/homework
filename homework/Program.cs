@@ -23,11 +23,11 @@ namespace homework
         {
             Console.Clear();
             int x = 0;
-            //Creates a new list containing all homework already on the file
-            List<homework> homeworkList = new List<homework>();
-            homeworkList = listGenerator(homeworkList);
             while (x == 0)
             {
+                //Creates a new list containing all homework already on the file
+                List<homework> homeworkList = new List<homework>();
+                homeworkList = listGenerator(homeworkList);
                 Console.WriteLine("1. View Homework\n2. Add Homework\n3. Complete Homework\n4. Quit");
                 try
                 {
@@ -171,6 +171,7 @@ namespace homework
             fileWriter.WriteLine(date.ToString());
             fileWriter.WriteLine("false");
             fileWriter.Close();
+            Console.ReadLine();
         }
         //Allows user to mark a piece of homework as complete
         static void CompleteHomework(List<homework> homeworkList)
