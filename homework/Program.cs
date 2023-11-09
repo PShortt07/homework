@@ -75,9 +75,9 @@ namespace homework
             StreamReader fileReader = new StreamReader("homework.txt");
             int x = 0;
             //Creates a new 'homework' variable to be used to take in information from the file and put it into the list
+            homework homework = new homework();
             while (!fileReader.EndOfStream)
             {
-                homework homework = new homework();
                 if (x == 2)
                 {
                     homework.date = DateTime.Parse(fileReader.ReadLine());
@@ -98,6 +98,7 @@ namespace homework
                 {
                     //Adds to list
                     homeworkList.Add(homework);
+                    homework = new homework();
                     x = 0;
                 }
             }
